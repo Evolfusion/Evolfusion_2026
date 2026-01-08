@@ -1,0 +1,244 @@
+/* Estilos principales de la aplicación  */
+/* /* Alcance global: Generalmente, se utiliza para estilos globales que afectan a toda la aplicación.
+Variables CSS: Puedes definir variables CSS aquí para reutilizarlas en otros archivos.
+Normalización: Se incluyen estilos de normalización como Normalize.css o Reset CSS para garantizar una apariencia consistente en diferentes navegadores.
+Estilos base: Aquí puedes establecer los estilos básicos para elementos como el cuerpo, encabezados, párrafos, etc. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    /* * Typography */
+    /* Agregar grosor bold  titulo*/
+    --title-typography: "Be Vietnam Pro", sans-serif;
+    /* Agregar grosor regular/normal subtitulo */
+    --subtitle-typography: "Be Vietnam Pro", sans-serif;
+    /* Agregar grosor regular/normal descripción */
+    --description-typography: "Roboto", sans-serif;
+
+    /* *Colors */
+    --main-background: linear-gradient(45deg, rgba(237, 30, 121, 0.8) 50%, rgba(110, 57, 233, 0.8));
+    --color-primary: #ed1e79;
+    --color-secondary: #6e39e9;
+    /* *Buttons */
+    --btn-size: 1rem;
+
+    /* *Movil */
+    --main-margin: 1rem 1rem;
+    --main-padding: 1rem 1rem;
+    --container-margin: 1rem 0rem;
+    --container-padding: 1rem 0;
+    --title-size: 1.50rem;
+    --subtitle-size: 1.25rem;
+    --description-size: 1rem;
+
+    /* *Netbook */
+    --netbook-margin: 0 2.25rem;
+    --netbook-container: 1.25rem 0;
+    --netbook-title: 2rem;
+    --netbook-subtitle: 1.5rem;
+    --netbook-description: 1.2rem;
+
+    /* *Desktop */
+    --desktop-container: 1.5rem 0;
+    --desktop-title: 3rem;
+    --desktop-subtitle: 1rem;
+    --desktop-description: 1.3rem;
+}
+
+/*? Menu */
+/* Agregar menu flotante */
+.header {
+    background-color: transparent;
+}
+
+.header__logo-img {
+    width: 70px;
+    margin: var(--main-margin);
+}
+
+.header__menu {
+    margin: var(--main-margin);
+    /* !Terminar de implementar */
+}
+
+.header__menu-link {
+    color: white;
+    background-color: red;
+    font-family: var(--title-typography);
+    font-size: 15px;
+}
+
+.header__menu-link--budget {
+    background: var(--main-background);
+}
+
+.home {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.358), rgba(0, 0, 0, 0.5)), linear-gradient(45deg, rgba(237, 30, 121, 0.6), rgba(110, 57, 233, 0.6)), url("../public/img/front-page.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+
+.home__particles {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #ed1e79;
+    border-radius: 50%;
+    filter: blur(1px);
+    will-change: transform;
+}
+
+.particle:nth-child(odd) {
+    opacity: 0.6;
+}
+
+.particle:nth-child(3n) {
+    width: 10px;
+    height: 10px;
+}
+
+.home__content {
+    position: relative;
+    z-index: 2;
+    margin: var(--main-margin);
+}
+
+.home__title {
+    text-align: center;
+    font-size: var(--title-size);
+    font-family: var(--title-typography);
+    color: var(--color-primary);
+}
+
+.home__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home__text {
+    background-color: #573997;
+    border: #ffffff42 1px solid;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: var(--container-margin);
+}
+
+.home__description,
+.home__span {
+    text-align: center;
+    font-size: var(--description-size);
+    font-family: var(--description-typography);
+    color: #ffffff;
+}
+
+.home__span {
+    margin: 1rem 0 0 0;
+    color: var(--color-primary);
+}
+
+.home__buttons {
+    font-family: var(--subtitle-typography);
+    font-size: var(--btn-size);
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.home__budget,
+.home__services {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    border-radius: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.home__services {
+    border: 1px solid #ffffff;
+}
+
+.home__services:hover {
+    color: #ff007f; /* Color rosa neon */
+    text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px white; /* Efecto fosforescente rosa y blanco */
+    transition: all 0.3s ease;
+    transform: scale(1.1);
+    /* Efecto de zoom al pasar el mouse */
+}
+
+.home__icon--rotate {
+    transition: transform 3s ease;
+    /* Transición suave solo para el icono de services */
+    
+}
+
+.home__services:hover .home__icon--rotate {
+    transform: rotate(360deg);
+    /* Gira el icono de services */
+}
+
+.home__budget {
+    background: linear-gradient(45deg, rgba(237, 30, 121, 0.8) 50%, rgba(110, 57, 233, 0.8));
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    /* Transición suave para zoom, fondo y sombra */
+}
+
+.home__budget:hover {
+    background: linear-gradient(45deg, #ff007f 50%, #9932cc);
+    /* Gradiente neon con rosa y púrpura brillantes */
+    box-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px #ff007f;
+    /* Efecto fosforescente para resaltar el neon */
+    transform: scale(1.1);
+    /* Efecto de zoom al pasar el mouse */
+}
+
+.home__budget:hover .home__icon {
+    transform: translateX(5px);
+}
+
+.home__icon {
+    width: 1.2rem;
+}
+
+
+
+
+
+
+.about {
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 1rem;
+  background: #ffffff;
+}
+
+.waves-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+.about__content {
+  position: relative;
+  z-index: 1;
+}
