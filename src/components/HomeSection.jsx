@@ -10,7 +10,7 @@ export default function HomeSection() {
   const { particles, isHover, setIsHover } = HomeParticle();
 
   return (
-    <section
+    <div
       className="home"
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
@@ -61,6 +61,6 @@ export default function HomeSection() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

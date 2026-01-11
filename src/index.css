@@ -22,8 +22,12 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 
     /* *Colors */
     --main-background: linear-gradient(45deg, rgba(237, 30, 121, 0.8) 50%, rgba(110, 57, 233, 0.8));
+    --container-background: #101828;
     --color-primary: #ed1e79;
     --color-secondary: #6e39e9;
+    --description-color: #DFDDE1;
+    --color-about-background: #171831;
+    --color-card-background: #282643c9;
     /* *Buttons */
     --btn-size: 1rem;
 
@@ -77,6 +81,7 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     background: var(--main-background);
 }
 
+/*? Home */
 .home {
     position: relative;
     overflow: hidden;
@@ -92,7 +97,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     pointer-events: none;
 }
 
-.particle {
+.particle,
+.profile__particle {
     position: absolute;
     width: 6px;
     height: 6px;
@@ -177,8 +183,10 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 }
 
 .home__services:hover {
-    color: #ff007f; /* Color rosa neon */
-    text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px white; /* Efecto fosforescente rosa y blanco */
+    color: #ff007f;
+    /* Color rosa neon */
+    text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px white;
+    /* Efecto fosforescente rosa y blanco */
     transition: all 0.3s ease;
     transform: scale(1.1);
     /* Efecto de zoom al pasar el mouse */
@@ -187,7 +195,6 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 .home__icon--rotate {
     transition: transform 3s ease;
     /* Transición suave solo para el icono de services */
-    
 }
 
 .home__services:hover .home__icon--rotate {
@@ -218,27 +225,274 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     width: 1.2rem;
 }
 
-
-
-
-
-
+/* ?About */
 .about {
-  position: relative;
-  overflow: hidden;
-  padding: 6rem 1rem;
-  background: #ffffff;
+    position: relative;
+    overflow: hidden;
+    background: var(--color-about-background);
 }
 
 .waves-bg {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* Efecto onda */
+.wave {
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    filter: brightness(0.6);
+}
+
+.about__span {
+    color: #7c3aed;
+    font-weight: bold;
 }
 
 .about__content {
-  position: relative;
-  z-index: 1;
+    position: relative;
+    z-index: 1;
+    margin: var(--main-margin);
+}
+
+.about__header {
+    margin: 3rem 0 0 0;
+}
+
+.about__title {
+    background: linear-gradient(90deg, #ED1E79, #6E39E9);
+    /* Prefijo */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-family: var(--title-typography);
+    font-size: var(--title-size);
+}
+
+.about__description {
+    text-align: center;
+    font-family: var(--description-typography);
+    font-size: var(--description-size);
+    margin: var(--container-margin);
+    color: var(--description-color);
+    line-height: 1.6;
+}
+
+.about__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.about__card,
+.about__profile,
+.about__features {
+    position: relative;
+    background-color: var(--color-card-background);
+    border: #ffffff42 1px solid;
+    border-radius: 10px;
+    padding: 1rem;
+    overflow: hidden;
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+/* Degradado */
+.about__card::before,
+.about__profile::before,
+.about__features::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg,
+            rgba(237, 30, 121, 0.8),
+            rgba(110, 57, 233, 0.8));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+/* Capa oscura */
+.about__card::after,
+.about__profile::after,
+.about__features::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.082);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+}
+
+.about__title-card {
+    color: #ffffff;
+    padding: 0.5rem 0 0 0;
+}
+
+.about__card:hover::before,
+.about__card:hover::after,
+.about__profile:hover::before,
+.about__features:hover::before {
+    opacity: 1;
+}
+
+.about__card:hover,
+.about__profile:hover,
+.about__features:hover {
+    box-shadow: 0 0 60px rgba(237, 30, 121, 0.5), 0 0 50px rgba(110, 57, 233, 0.4);
+}
+
+.about__title-card,
+.about__icon-title,
+.about__achievement-title {
+    color: white;
+    font-family: var(--subtitle-typography);
+    font-weight: 300;
+    font-size: var(--subtitle-size);
+}
+
+.about__card>*,
+.about__profile>*,
+.about__feature>* {
+    position: relative;
+    z-index: 3;
+}
+
+.about__description-card,
+.about__icon-description,
+.about__achievement-description {
+    color: var(--description-color);
+    font-family: var(--description-typography);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: var(--container-margin);
+}
+
+.about__profile {
+    position: relative;
+    margin-top: 1rem;
+    padding: 1rem 0 0 0;
+}
+
+/* Particulas */
+/* Contenedor de partículas */
+.about__profile {
+    position: relative;
+}
+
+.profile__particles {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.profile__particle {
+    transition: background-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.about__profile:hover .profile__particle {
+    background-color: #282643c9;
+}
+
+.about__img {
+    display: block;
+    margin: auto;
+    width: 60%;
+    border-radius: 14px;
+    z-index: 3;
+    position: relative;
+    filter: drop-shadow(0 25px 40px rgba(124, 58, 237, 0.35));
+}
+
+.about__name {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-family: var(--subtitle-typography);
+    font-size: 2rem;
+    font-weight: 900;
+    z-index: 4;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgb(110, 57, 233);
+}
+
+.about__role {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--description-typography);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: white;
+    text-shadow: rgb(237, 30, 121) 0px 0px 5px, rgb(237, 30, 121) 0px 0px 10px, rgb(237, 30, 121) 0px 0px 15px;
+    z-index: 4;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    /*pone la letra en mayuscula  */
+}
+
+.about__features,
+.about__achievement-card {
+    margin-top: 1rem;
+}
+
+.about__feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.about__icon {
+    background-color: #ed1e79;
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+.about__achievement-icon-svg {
+    color: #ed1e79;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+.about__icon-description {
+    margin: 0;
+}
+.about__achievement-card {
+    position: relative;
+    border-radius: 10px;
+    padding: 1rem;
+    overflow: hidden;
+    background:
+        linear-gradient(#101828, #101828) padding-box,
+        linear-gradient(45deg,
+            rgba(237, 30, 121, 0.8) 50%,
+            rgba(110, 57, 233, 0.8)) border-box;
+    border: 1px solid transparent;
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+/* HOVER → EL BORDE SE CONVIERTE EN NEÓN */
+.about__achievement-card:hover {
+    box-shadow:
+        0 0 12px rgba(237, 30, 121, 0.9),
+        0 0 30px rgba(110, 57, 233, 0.9);
+    transform: translateY(-6px);
+}
+
+.about__achievement-description {
+    margin: 0;
 }

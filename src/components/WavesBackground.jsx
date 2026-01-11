@@ -7,11 +7,12 @@ export default function WavesBackground() {
         fill="url(#aboutGradient)"
         paused={false}
         options={{
-          height: 30,
-          amplitude: 25,
+          height: 200,
+          amplitude: 90,
           speed: 0.12,
-          points: 4,
+          points: 3,
         }}
+        className="wave"
       >
         <defs>
           <linearGradient id="aboutGradient" gradientTransform="rotate(90)">
