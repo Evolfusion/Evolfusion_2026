@@ -47,13 +47,7 @@ export default function AboutSection() {
           transition={{ duration: 0.6 }}
         >
         </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        
           <div className="about__evolfusion">
             <div className="about__header">
               <h2 className="about__title">Sobre Evolfusion</h2>
@@ -148,7 +142,6 @@ export default function AboutSection() {
               })}
             </div>
           </div>
-        </motion.div>
       </div>
     </div>
   );
