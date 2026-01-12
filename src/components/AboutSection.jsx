@@ -6,6 +6,7 @@ import { CodeXml, Palette, TrendingUp, ShieldCheck, Rocket, Award } from "lucide
 /* Este objeto relaciona un STRING (que viene desde la base de datos)
  con el componente real de Lucide React.
 Nos permite renderizar iconos dinámicamente a partir de la dat */
+/* Es un objeto */
 const iconMap = { CodeXml, Palette, TrendingUp, ShieldCheck, Rocket, Award };
 
 /* Función que permite resaltar contenido  */
@@ -122,7 +123,9 @@ export default function AboutSection() {
               })}
             </div>
             <div className="about__achievements">
+                                        {/* STRING */}
               {aboutAchievements.map(({ id, icon, title, description }) => {
+                /* Accede a una propiedad del objeto */
                 const Icon = iconMap[icon];
 
                 return (

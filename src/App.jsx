@@ -3,7 +3,8 @@ import {
   Header,
   HomeSection,
   AboutSection,
-  ServiceSection
+  ServiceSection,
+  TestimoniesSection
 } from './components'
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
       </section>
       <section className="service">
         <ServiceSection />
+      </section>
+      <section className='testimonie'>
+        <TestimoniesSection />
       </section>
     </main>
     </>
