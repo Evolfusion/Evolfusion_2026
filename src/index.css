@@ -192,14 +192,14 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     /* Efecto de zoom al pasar el mouse */
 }
 
-.home__icon--rotate {
+.home__icon--rotate{
     transition: transform 3s ease;
     /* Transición suave solo para el icono de services */
 }
 
-.home__services:hover .home__icon--rotate {
+.home__services:hover .home__icon--rotate{
     transform: rotate(360deg);
-    /* Gira el icono de services */
+    
 }
 
 .home__budget {
@@ -221,7 +221,7 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     transform: translateX(5px);
 }
 
-.home__icon {
+.home__icon{
     width: 1.2rem;
 }
 
@@ -260,11 +260,13 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     margin: var(--main-margin);
 }
 
-.about__header {
+.about__header,
+.services__header {
     margin: 3rem 0 0 0;
 }
 
-.about__title {
+.about__title,
+.services__title {
     background: linear-gradient(90deg, #ED1E79, #6E39E9);
     /* Prefijo */
     -webkit-background-clip: text;
@@ -275,7 +277,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     font-size: var(--title-size);
 }
 
-.about__description {
+.about__description,
+.services__description {
     text-align: center;
     font-family: var(--description-typography);
     font-size: var(--description-size);
@@ -284,7 +287,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     line-height: 1.6;
 }
 
-.about__cards {
+.about__cards,
+.services__cards {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -292,7 +296,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 
 .about__card,
 .about__profile,
-.about__features {
+.about__features,
+.services__card {
     position: relative;
     background-color: var(--color-card-background);
     border: #ffffff42 1px solid;
@@ -305,7 +310,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 /* Degradado */
 .about__card::before,
 .about__profile::before,
-.about__features::before {
+.about__features::before,
+.services__card::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -320,7 +326,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 /* Capa oscura */
 .about__card::after,
 .about__profile::after,
-.about__features::after {
+.about__features::after,
+.services__card::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -330,27 +337,25 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     z-index: 2;
 }
 
-.about__title-card {
-    color: #ffffff;
-    padding: 0.5rem 0 0 0;
-}
-
 .about__card:hover::before,
 .about__card:hover::after,
 .about__profile:hover::before,
-.about__features:hover::before {
+.about__features:hover::before,
+.services__card:hover::before {
     opacity: 1;
 }
 
 .about__card:hover,
 .about__profile:hover,
-.about__features:hover {
+.about__features:hover,
+.services__card:hover {
     box-shadow: 0 0 60px rgba(237, 30, 121, 0.5), 0 0 50px rgba(110, 57, 233, 0.4);
 }
 
 .about__title-card,
 .about__icon-title,
-.about__achievement-title {
+.about__achievement-title,
+.services__title-card {
     color: white;
     font-family: var(--subtitle-typography);
     font-weight: 300;
@@ -359,14 +364,17 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 
 .about__card>*,
 .about__profile>*,
-.about__feature>* {
+.about__feature>*,
+.services__card>* {
     position: relative;
     z-index: 3;
 }
 
 .about__description-card,
 .about__icon-description,
-.about__achievement-description {
+.about__achievement-description,
+.services__description-card,
+.services__description-request {
     color: var(--description-color);
     font-family: var(--description-typography);
     font-size: 1rem;
@@ -378,12 +386,6 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     position: relative;
     margin-top: 1rem;
     padding: 1rem 0 0 0;
-}
-
-/* Particulas */
-/* Contenedor de partículas */
-.about__profile {
-    position: relative;
 }
 
 .profile__particles {
@@ -455,7 +457,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     gap: 1rem;
 }
 
-.about__icon {
+.about__icon,
+.services__icon-primary {
     background-color: #ed1e79;
     color: #ffffff;
     padding: 0.5rem;
@@ -471,6 +474,7 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 .about__icon-description {
     margin: 0;
 }
+
 .about__achievement-card {
     position: relative;
     border-radius: 10px;
@@ -495,4 +499,86 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 
 .about__achievement-description {
     margin: 0;
+}
+
+/* Services */
+.service {
+    background: var(--color-about-background);
+}
+
+.services {
+    position: relative;
+    z-index: 1;
+    padding: var(--main-padding);
+}
+.services__icons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.services__icon-secondary {
+    color: #383F4C;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.services__card:hover .services__icon-secondary {
+    color: transparent; /* o usar opacity:0; para un efecto más suave */
+
+}
+
+.services__icon-primary {
+    transition: transform 0.8s ease; 
+}
+
+.services__card:hover .services__icon-primary {
+    transform: rotate(360deg); 
+}
+.services__btn {
+    color: #ed1e79;
+    display: flex;
+    align-items: center;
+}
+.services__card:hover .services__btn {
+    color: #5830b1;
+}
+.services__icon{
+    width: 1rem;
+    margin-left: 5px;
+}
+.services__card:hover .services__icon{
+    transform: translateX(5px);
+}
+.services__request {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.services__description-request{
+    text-align: center;
+}
+.services__btn-request {
+    font-family: var(--subtitle-typography);
+    font-size: var(--btn-size);
+    border-radius: 10px;
+    color: #ffffff;
+    padding: 1rem;
+    overflow: hidden;
+    background:
+        linear-gradient(#101828, #101828) padding-box,
+        linear-gradient(45deg,
+            rgba(237, 30, 121, 0.8) 50%,
+            rgba(110, 57, 233, 0.8)) border-box;
+    border: 1px solid transparent;
+    box-shadow:
+        0 0 12px rgba(237, 30, 120, 0.397),
+        0 0 30px rgba(110, 57, 233, 0.397);
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.services__btn-request:hover {
+    box-shadow:
+        0 0 12px rgba(237, 30, 121, 0.9),
+        0 0 30px rgba(110, 57, 233, 0.9);
+    transition: all 0.3s ease;
+    transform: scale(1.1);
 }

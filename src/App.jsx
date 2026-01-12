@@ -2,7 +2,8 @@
 import {
   Header,
   HomeSection,
-  AboutSection
+  AboutSection,
+  ServiceSection
 } from './components'
 
 function App() {
@@ -17,7 +18,9 @@ function App() {
       <section className="about">
         <AboutSection />
       </section>
-      
+      <section className="service">
+        <ServiceSection />
+      </section>
     </main>
     </>
   )
