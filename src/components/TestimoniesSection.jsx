@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { testimoniesData } from "../data/data.js"
+import { testimoniesData, testimoniesStats } from "../data/data.js"
 import { Quote, Star } from "lucide-react"
 
 const iconMap = { Quote, Star }
@@ -65,6 +65,14 @@ export default function TestimoniesSection() {
                         </span>
                     </motion.article>
                 </AnimatePresence>
+            </div>
+            <div className="testimonie__stats">
+                {testimoniesStats.map(({id, value, label}) => (
+                    <div className="testimonie__stat" key={id}>
+                        <span className="testimonie__value">{value}</span>
+                        <p className="testimonie__label">{label}</p>
+                    </div>
+                ))}
             </div>
         </div>
     )

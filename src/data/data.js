@@ -75,3 +75,17 @@ export const testimoniesData = [
         id: 6, icon: "Quote",iconStar:"Star", description:"La reparación de mi computadora fue rápida y efectiva. Recuperé todo mi equipo funcionando perfectamente.", name:"Fernando Díaz", position:"Freelancer"
     }
 ]
+export const testimoniesStats = [
+  {
+    id: 1,value: "150+",label: "Proyectos Completados"
+  },
+  {
+    id: 2,value: "98%",label: "Satisfacción Cliente"
+  },
+  {
+    id: 3,value: "5★",label: "Calificación Promedio"
+  },
+  {
+    id: 4,value: "24/7",label: "Soporte Disponible"
+  }
+];
