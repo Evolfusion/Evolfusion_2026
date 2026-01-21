@@ -82,7 +82,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 }
 
 /*? Home */
-.home , .contact{
+.home,
+.contact {
     position: relative;
     overflow: hidden;
     background: linear-gradient(rgba(0, 0, 0, 0.358), rgba(0, 0, 0, 0.5)), linear-gradient(45deg, rgba(237, 30, 121, 0.6), rgba(110, 57, 233, 0.6)), url("../public/img/front-page.jpeg");
@@ -90,7 +91,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     background-position: center;
 }
 
-.home__particles , .contact__particles {
+.home__particles,
+.contact__particles {
     position: absolute;
     inset: 0;
     z-index: 1;
@@ -117,12 +119,13 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     height: 10px;
 }
 
-.home__content , .contact__content {
+.home__content,
+.contact__content,
+.contact__info {
     position: relative;
     z-index: 2;
     margin: var(--main-margin);
 }
-
 
 .home__title {
     text-align: center;
@@ -138,7 +141,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     align-items: center;
 }
 
-.home__text , .contact__text {
+.home__text,
+.contact__text {
     background-color: #573997;
     border: #ffffff42 1px solid;
     border-radius: 10px;
@@ -147,19 +151,22 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 }
 
 .home__description,
-.home__span , .contact__description {
+.home__span,
+.contact__description {
     text-align: center;
     font-size: var(--description-size);
     font-family: var(--description-typography);
     color: #ffffff;
 }
 
-.home__span , .contact__span {
+.home__span,
+.contact__span {
     margin: 1rem 0 0 0;
     color: var(--color-primary);
 }
 
-.home__buttons , .contact__buttons{
+.home__buttons,
+.contact__buttons {
     font-family: var(--subtitle-typography);
     font-size: var(--btn-size);
     display: flex;
@@ -169,7 +176,9 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 }
 
 .home__budget,
-.home__services , .contact__budget , .contact__services{
+.home__services,
+.contact__budget,
+.contact__services {
     display: flex;
     align-items: center;
     gap: 0.3rem;
@@ -179,11 +188,12 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     padding: 0.5rem;
 }
 
-.home__services , .contact__services{
+.home__services,
+.contact__services {
     border: 1px solid #ffffff;
 }
 
-.home__services:hover{
+.home__services:hover {
     color: #ff007f;
     /* Color rosa neon */
     text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px white;
@@ -193,21 +203,26 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     /* Efecto de zoom al pasar el mouse */
 }
 
-.home__icon--rotate , .contact__icon--rotate{
+.home__icon--rotate,
+.contact__icon--rotate {
     transition: transform 3s ease;
     /* Transición suave solo para el icono de services */
 }
 
-.home__services:hover .home__icon--rotate , .contact__services:hover .contact__icon--rotate {
+.home__services:hover .home__icon--rotate,
+.contact__services:hover .contact__icon--rotate {
     transform: rotate(360deg);
 }
 
-.home__budget , .contact__budget{
+.home__budget,
+.contact__budget {
     background: linear-gradient(45deg, rgba(237, 30, 121, 0.8) 50%, rgba(110, 57, 233, 0.8));
     transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
     /* Transición suave para zoom, fondo y sombra */
 }
-.home__budget:hover , .contact__budget:hover {
+
+.home__budget:hover,
+.contact__budget:hover {
     background: linear-gradient(45deg, #ff007f 50%, #9932cc);
     /* Gradiente neon con rosa y púrpura brillantes */
     box-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px #ff007f;
@@ -216,11 +231,13 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     /* Efecto de zoom al pasar el mouse */
 }
 
-.home__budget:hover .home__icon , .contact__budget:hover .contact__icon{
+.home__budget:hover .home__icon,
+.contact__budget:hover .contact__icon {
     transform: translateX(5px);
 }
 
-.home__icon, .contact__icon {
+.home__icon,
+.contact__icon {
     width: 1.2rem;
 }
 
@@ -266,7 +283,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 
 .about__title,
 .services__title,
-.testimonies__title {
+.testimonies__title,
+.contact__info-title{
     background: linear-gradient(90deg, #ED1E79, #6E39E9);
     /* Prefijo */
     -webkit-background-clip: text;
@@ -279,7 +297,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 
 .about__description,
 .services__description,
-.testimonies__description {
+.testimonies__description,
+.contact__info-description {
     text-align: center;
     font-family: var(--description-typography);
     font-size: var(--description-size);
@@ -290,7 +309,7 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 
 .about__cards,
 .services__cards,
-.testimonies__cards {
+.testimonies__cards{
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -300,7 +319,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 .about__profile,
 .about__features,
 .services__card,
-.testimonies__card {
+.testimonies__card,
+.contact__item { 
     position: relative;
     background-color: var(--color-card-background);
     border: #ffffff42 1px solid;
@@ -315,7 +335,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 .about__profile::before,
 .about__features::before,
 .services__card::before,
-.testimonies__card::before {
+.testimonies__card::before,
+.contact__item::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -332,7 +353,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 .about__profile::after,
 .about__features::after,
 .services__card::after,
-.testimonies__card::after {
+.testimonies__card::after,
+.contact__item::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -347,7 +369,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 .about__profile:hover::before,
 .about__features:hover::before,
 .services__card:hover::before,
-.testimonies__card:hover::before {
+.testimonies__card:hover::before,
+.contact__item:hover::before{
     opacity: 1;
 }
 
@@ -355,7 +378,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 .about__profile:hover,
 .about__features:hover,
 .services__card:hover,
-.testimonies__card:hover {
+.testimonies__card:hover,
+.contact__item:hover {
     box-shadow: 0 0 60px rgba(237, 30, 121, 0.5), 0 0 50px rgba(110, 57, 233, 0.4);
 }
 
@@ -363,7 +387,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 .about__icon-title,
 .about__achievement-title,
 .services__title-card,
-.testimony-card__name {
+.testimony-card__name,
+.contact__item-title {
     color: white;
     font-family: var(--subtitle-typography);
     font-weight: 300;
@@ -374,7 +399,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 .about__profile>*,
 .about__feature>*,
 .services__card>*,
-.testimonies__card>* {
+.testimonies__card>*,
+.contact__item>* {
     position: relative;
     z-index: 3;
 }
@@ -384,7 +410,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 .about__achievement-description,
 .services__description-card,
 .services__description-request,
-.testimonies__card-description {
+.testimonies__card-description,
+.contact__item-info {
     color: var(--description-color);
     font-family: var(--description-typography);
     font-size: 1rem;
@@ -468,7 +495,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 }
 
 .about__icon,
-.services__icon-primary {
+.services__icon-primary,
+.contact__item-figure {
     background-color: #ed1e79;
     color: #ffffff;
     padding: 0.5rem;
@@ -481,7 +509,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     border-radius: 10px;
 }
 
-.about__icon-description, .about__achievement-description {
+.about__icon-description,
+.about__achievement-description {
     margin: 0;
 }
 
@@ -535,11 +564,11 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 
 }
 
-.services__icon-primary {
+.services__icon-primary, .contact__item-figure {
     transition: transform 0.8s ease;
 }
 
-.services__card:hover .services__icon-primary {
+.services__card:hover .services__icon-primary , .contact__item:hover .contact__item-figure {
     transform: rotate(360deg);
 }
 
@@ -572,7 +601,7 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     text-align: center;
 }
 
-.services__btn-request{
+.services__btn-request {
     font-family: var(--subtitle-typography);
     font-size: var(--btn-size);
     border-radius: 10px;
@@ -591,7 +620,7 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     transition: box-shadow 0.4s ease, transform 0.4s ease;
 }
 
-.services__btn-request:hover{
+.services__btn-request:hover {
     box-shadow:
         0 0 12px rgba(237, 30, 121, 0.9),
         0 0 30px rgba(110, 57, 233, 0.9);
@@ -690,15 +719,16 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     display: flex;
     justify-content: center;
 }
+
 .testimonie__stats {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
 }
 
-.testimonie__stat{
+.testimonie__stat {
     border-radius: 10px;
     padding: 1rem;
     overflow: hidden;
@@ -711,31 +741,45 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     box-shadow:
         0 0 12px rgba(237, 30, 120, 0.397),
         0 0 30px rgba(110, 57, 233, 0.397);
-    transition: box-shadow 0.4s ease, transform 0.4s ease; 
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
 }
-.testimonie__stat:hover{
+
+.testimonie__stat:hover {
     box-shadow:
         0 0 12px rgba(237, 30, 121, 0.9),
         0 0 30px rgba(110, 57, 233, 0.9);
     transition: all 0.3s ease;
     transform: scale(1.1);
 }
-.testimonie__label, .testimonie__value{
+
+.testimonie__label,
+.testimonie__value {
     display: block;
     text-align: center;
     color: #ffffff;
     font-family: var(--description-typography);
     font-size: 2rem;
 }
-.testimonie__label{
+
+.testimonie__label {
     font-size: 1rem;
     margin-top: 0.3rem;
 }
+
 /* Contact */
-.contact{
-    background: linear-gradient(rgba(0, 0, 0, 0.358), rgba(0, 0, 0, 0.5)), linear-gradient(45deg, rgba(237, 30, 121, 0.6), rgba(110, 57, 233, 0.6)), url("../public/img/front-contact.jpeg");
+.contact {
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.4)),
+      linear-gradient(45deg, rgba(237, 30, 120, 0.841), rgba(110, 57, 233, 0.819)),
+      url("../public/img/front-contact.jpeg");
     background-size: cover;
     background-position: center;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+.contact__particle{
+    background-color: #171831;
 }
 .contact__title {
     text-align: center;
@@ -743,33 +787,85 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     font-family: var(--title-typography);
     color: #ffffff;
 }
-.contact__title-span{
+
+.contact__title-span {
     color: var(--color-primary);
 }
+
 .contact__text {
     /* Arreglar */
-    background: linear-gradient(45deg, rgba(237, 30, 120, 0.648), rgba(110, 57, 233, 0.61));
+    background: linear-gradient(45deg, rgba(237, 30, 120, 0.35), rgba(110, 57, 233, 0.35));
     border: #ffffff42 1px solid;
     border-radius: 10px;
     padding: 1rem;
     margin: var(--container-margin);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
-.contact__budget{
+
+.contact__budget {
     color: #573997;
     background: #ffffff;
 }
+
 .contact__budget:hover {
     background: #ffffff;
     box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
     transform: scale(1.1);
 }
-.contact__services{
+
+.contact__services {
     background-color: rgba(255, 255, 255, 0.221);
 }
-.contact__services:hover{
-    color:  #ed1e79;
+
+.contact__services:hover {
     background-color: rgba(255, 255, 255, 0.475);
+    text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px white;
     transition: all 0.3s ease;
     transform: scale(1.1);
     /* Efecto de zoom al pasar el mouse */
+}
+
+.contact__features{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+.contact__feature-text{
+    color: #ffffff;
+    font-family: var(--description-typography);
+    font-size: 0.8rem;
+    text-align: center;
+}
+.contact__items{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    text-align: center;
+}
+.contact__item:nth-child(3) {
+    grid-column: 1 / -1; /* ocupa las 2 columnas */
+}
+.contact__item {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    gap: 0.75rem;
+}
+.contact__item:hover {
+    transform: scale(1.08);
+}
+.contact__item-figure{
+    width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+}
+.contact__item-info {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    line-height: 1.4;
 }

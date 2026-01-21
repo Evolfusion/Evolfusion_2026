@@ -57,7 +57,7 @@ export default function AboutSection() {
             {/* map , recorre |   restructuración */}
             <div className=" about__cards">
               {aboutData.map(({ id, title, description, highlight }) => (
-                <article className="about__card" key={id}>
+                <article className="about__card" key={`about-card-${id}`}>
                   <h3 className="about__title-card">{title}</h3>
                   <p className="about__description-card">{highlightText(description, highlight)}</p>
                 </article>
@@ -72,7 +72,7 @@ export default function AboutSection() {
               >
                 {particles.map((p, i) => (
                   <motion.span
-                    key={i}
+                    key= {i}
                     className="profile__particle"
                     initial={{ x: 0, y: 0 }}
                     animate={
@@ -108,7 +108,7 @@ export default function AboutSection() {
                 const Icon = iconMap[icon];
 
                 return (
-                  <article className="about__features" key={id}>
+                  <article className="about__features" key={`about-warranty-${id}`}>
                     <div className="about__feature">
                       <figure className="about__icons">
                         <Icon size={48} strokeWidth={1.8} className="about__icon" />
@@ -129,7 +129,7 @@ export default function AboutSection() {
                 const Icon = iconMap[icon];
 
                 return (
-                  <article className="about__achievement-card" key={id}>
+                  <article className="about__achievement-card" key={`about-achievement-${id}`}>
                     <div className="about__achievement">
                       <figure className="about__achievement-icon">
                         <Icon size={48} strokeWidth={1.8} className="about__achievement-icon-svg"

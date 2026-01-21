@@ -28,7 +28,7 @@ export const aboutWarranty = [
 
 export const aboutAchievements = [
     {
-        id: 2, icon: "Rocket", title: "Innovación Constante", description: "Utilizamos las últimas tecnologías y tendencias del mercado."
+        id: 1, icon: "Rocket", title: "Innovación Constante", description: "Utilizamos las últimas tecnologías y tendencias del mercado."
     },
     {
         id: 2, icon: "Award", title: "Excelencia Comprobada", description: "Años de experiencia entregando proyectos exitosos."
@@ -77,7 +77,7 @@ export const testimoniesData = [
 ]
 export const testimoniesStats = [
   {
-    id: 1,value: "150+",label: "Proyectos Completados"
+    id: 1,value: "20+",label: "Proyectos Completados"
   },
   {
     id: 2,value: "98%",label: "Satisfacción Cliente"
@@ -89,3 +89,14 @@ export const testimoniesStats = [
     id: 4,value: "24/7",label: "Soporte Disponible"
   }
 ];
+export const contactData =  [
+    {
+        id: 1 , icon : "Mail" , title : "Email", info: 'evolfusion.arg@gmail.com'
+    },
+    {
+        id: 2 , icon : "Phone" , title : "WhatsApp", info: '+ 54 112772-8592'
+    },
+    {
+        id: 3 , icon : "MapPin" , title : "Ubicación", info: 'CABA , Recoleta'
+    }
+]
