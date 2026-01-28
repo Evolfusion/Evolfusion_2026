@@ -1,15 +1,31 @@
-import { Sparkles, ArrowRight, Mail, Phone, MapPin } from "lucide-react"; /* Importamos libreria  icons*/
+import { Sparkles, ArrowRight, Mail, Phone, MapPin, Send } from "lucide-react"; /* Importamos libreria  icons*/
 const iconMap = { Mail, Phone, MapPin };
 import { motion } from "framer-motion"; /* Importamos libreria  animación*/
-import { HomeParticle } from "../hook/HomeParticle"; /* imprtamos el hook (logica) */
+import { HomeParticle } from "../hook/HomeParticle.js"; /* imprtamos el hook (logica) */
 import { contactData } from "../data/data"
+import { useEffect } from "react";
 
 /* PASAR A CARPETA DE HOOKS */
-export default function ContacSection() {
+export default function ContactSection() {
 
     //*Destructuring de objetos
     //Esto permite acceder a las propiedades de un objeto que retorna el hook HomeParticle
     const { particles, isHover, setIsHover } = HomeParticle();
+
+    useEffect(() => {
+        const selectElement = document.getElementById("reason");
+        
+        const updateSelectColor = () => {
+            if (selectElement.value) {
+                selectElement.classList.add("form__select--selected");
+            } else {
+                selectElement.classList.remove("form__select--selected");
+            }
+        };
+
+        selectElement.addEventListener("change", updateSelectColor);
+        return () => selectElement.removeEventListener("change", updateSelectColor);
+    }, []);
 
     return (
         <div className="contact__particle">
@@ -99,6 +115,43 @@ export default function ContacSection() {
                     })}
                 </div>
             </div>
+            <div className="form__container">
+                <form action="" method="post" className="form" >
+                    <div className="form__group">
+                        <label htmlFor="name" className="form__label">Nombre completo</label>
+                        <input type="text" id="name" placeholder="Tu nombre" name="name" aria-label="Tu nombre" className="form__input" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required/>
+                    </div>
+                    <div className="form__group">
+                        <label htmlFor="email" className="form__label">Email</label>
+                        <input type="email" id="email" placeholder="Tu email" name="email" className="form__input" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required/>
+                    </div>
+                    <div className="form__group">
+                        <label htmlFor="tel" className="form__label">Teléfono</label>
+                        <input type="tel" id="tel" placeholder="+54 9 11 6340-8605" name="tel" className="form__input" pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s/0-9]*$" required />
+                    </div>
+                    <div className="form__group">
+                        <label htmlFor="services" className="form__label">Servicio de interés</label>
+                        <select name="reason" id="reason" className="form__select form__option" >
+                            <option value="" disabled selected >Seleccionar un servicio</option>
+                            <option value="Diseño Web">Diseño Web</option>
+                            <option value="Soporte y Mantenimiento">Soporte y Mantenimiento</option>
+                            <option value="Diseño Gráfico">Diseño Gráfico</option>
+                            <option value="Reparación de Celulares">Reparación de Celulares</option>
+                            <option value="Sitios Web Profesionales">Sitios Web Profesionales</option>
+                            <option value="Reparaciones de Computadoras">Reparaciones de Computadoras</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div className="form__group">
+                        <label htmlFor="messenger" className="form__label">Mensaje</label>
+                        <textarea name="messenger" id="messenger" placeholder="Cunéntanos sobre tu proyecto..." className="form__textarea"></textarea>
+                    </div>
+                    <div className="form__group">
+                        <button type="submit" className="form__button">Enviar Mensaje <Send className="form__icon-send" /></button>
+                    </div>
+                </form>
+                <p className="form__support"><Sparkles className="form__icon-sparkle" /> Respondemos en menos de 24 horas</p>
+            </div> 
         </div>
 
     );

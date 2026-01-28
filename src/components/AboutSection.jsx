@@ -1,7 +1,7 @@
 import WavesBackground from "../components/WavesBackground.jsx";
 import { motion } from "framer-motion";
 import { aboutData, aboutWarranty, aboutAchievements } from "../data/data.js";
-import { HomeParticle } from "../hook/HomeParticle"; /* imprtamos el hook (logica) */
+import { HomeParticle } from "../hook/HomeParticle.js"; /* imprtamos el hook (logica) */
 import { CodeXml, Palette, TrendingUp, ShieldCheck, Rocket, Award } from "lucide-react";
 /* Este objeto relaciona un STRING (que viene desde la base de datos)
  con el componente real de Lucide React.

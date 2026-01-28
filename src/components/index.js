@@ -5,4 +5,4 @@ export { default as AboutSection } from "./AboutSection";
 export { default as WavesBackground } from "./WavesBackground";
 export { default as ServiceSection } from "./ServiceSection";
 export { default as TestimoniesSection} from "./TestimoniesSection"
-export {default as ContacSection} from "./ContactSection"
+export {default as ContactSection} from "./ContactSection"

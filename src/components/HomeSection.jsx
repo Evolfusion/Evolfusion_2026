@@ -1,6 +1,6 @@
 import { Sparkles, ArrowRight } from "lucide-react"; /* Importamos libreria  icons*/
 import { motion } from "framer-motion"; /* Importamos libreria  animación*/
-import { HomeParticle } from "../hook/HomeParticle"; /* imprtamos el hook (logica) */
+import { HomeParticle } from "../hook/HomeParticle.js"; /* imprtamos el hook (logica) */
 
 /* PASAR A CARPETA DE HOOKS */
 export default function HomeSection() {
@@ -11,7 +11,6 @@ export default function HomeSection() {
 
   return (
     <div
-      className="home"
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
