@@ -5,7 +5,8 @@ import {
   AboutSection,
   ServiceSection,
   TestimoniesSection,
-  ContactSection
+  ContactSection,
+  Footer
 } from './components'
 
 function App() {
@@ -29,6 +30,9 @@ function App() {
         <ContactSection />
       </section>
     </main>
+    <footer>
+      <Footer />
+    </footer>
     </>
   )
 }
