@@ -64,8 +64,9 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     z-index: 200;
 }
+
 .header--scrolled {
-    background-color:#171A39;
+    background-color: #171A39;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -148,9 +149,11 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     align-items: center;
     gap: 8px;
 }
-.header__menu-link--budget:hover{
-    background: linear-gradient(45deg, #6e39e9cc 30%,  #ed1e79cc);
+
+.header__menu-link--budget:hover {
+    background: linear-gradient(45deg, #6e39e9cc 30%, #ed1e79cc);
 }
+
 /*? Home */
 .home,
 .contact {
@@ -850,7 +853,7 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 }
 
 /* Contact */
-.contact{
+.contact {
     padding: 0;
     background:
         linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.4)),
@@ -862,7 +865,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 }
-.contact__content{
+
+.contact__content {
     padding-top: 3rem;
 }
 
@@ -1124,4 +1128,115 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     justify-content: center;
     align-items: center;
     gap: 6px;
+}
+
+
+@media (min-width: 768px) {
+
+    .home__content,
+    .contact__container,
+    .contact__title {
+        display: block;
+        width: 60%;
+        margin: 0 auto 2rem auto;
+    }
+
+    .home__title,
+    .contact__title {
+        font-size: var(--netbook-title);
+    }
+
+    .about__warranty {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .about__features {
+        flex: 1 1 250px;
+        /* desktop fluido */
+        max-width: 100%;
+    }
+
+    .about__feature {
+        flex-direction: column;
+    }
+
+    .about__icon-title,
+    .about__icon-description {
+        text-align: center;
+    }
+
+    .contact__features {
+        width: 60%;
+        margin: 2rem auto 3rem auto;
+    }
+
+    .contact__item-info {
+        line-height: 1;
+    }
+
+    .form__label {
+        font-size: 1.2rem;
+    }
+
+    .form__input,
+    .form__select,
+    .form__textarea {
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .form__button {
+        font-size: 1.5rem;
+        padding: 0.90rem 2rem;
+    }
+
+    .form__support {
+        font-size: 1rem;
+    }
+
+
+
+@media (min-width: 1024px) {
+
+  /* Ocultamos hamburguesa */
+  .header__hamburger {
+    display: none;
+  }
+
+  /* Mostramos el menú siempre */
+  .header__menu {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+
+    max-height: none;
+    opacity: 1;
+    overflow: visible;
+
+    background-color: transparent;
+  }
+
+  .header__menu li {
+    width: auto;
+    border-bottom: none;
+  }
+
+  .header__menu-link {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+
+}
+
+@media (min-width: 1024px) {
+    /* Laptop */
+}
+
+@media (min-width: 1440px) {
+    /* Desktop */
 }
