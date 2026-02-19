@@ -1,6 +1,7 @@
 import { servicesData } from "../data/data";
 import { Globe, Wrench, Palette, Smartphone, Monitor, Laptop, ArrowRight } from "lucide-react";
 const iconMap = { Globe, Wrench, Palette, Smartphone, Monitor, Laptop };
+
 export default function ServiceSection() {
     return (
         <div id="services">

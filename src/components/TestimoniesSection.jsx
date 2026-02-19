@@ -66,14 +66,60 @@ export default function TestimoniesSection() {
                     </motion.article>
                 </AnimatePresence>
             </div>
-            <div className="testimonie__stats">
-                {testimoniesStats.map(({id, value, label}) => (
+           
+
+            {/* ===== Desktop Floating Cards ===== */}
+            <div className="testimonies__desktop">
+                {testimoniesData.map(({ icon, iconStar, description, name, position }, i) => {
+                    const Icon = iconMap[icon]
+                    const IconStar = iconMap[iconStar]
+
+                    return (
+                        <motion.article
+                            key={i}
+                            className={`testimonies__card testimonies__card--${i}`}
+                            animate={{ y: [0, -15, 0] }}
+                            transition={{
+                                duration: 6 + i,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
+                        >
+                            <Icon size={48} className="testimonies__icon" />
+
+                            <div className="testimonies__stars">
+                                {Array.from({ length: 5 }).map((_, s) => (
+                                    <span key={s} className="testimonies__star-wrapper">
+                                        <IconStar
+                                            size={20}
+                                            fill="currentColor"
+                                            className="testimonies__star"
+                                        />
+                                    </span>
+                                ))}
+                            </div>
+
+                            <p className="testimonies__card-description">
+                                {description}
+                            </p>
+
+                            <h3 className="testimony-card__name">{name}</h3>
+                            <span className="testimony-card__position">
+                                {position}
+                            </span>
+                        </motion.article>
+                    )
+                })}
+            </div>
+             <div className="testimonie__stats">
+                {testimoniesStats.map(({ id, value, label }) => (
                     <div className="testimonie__stat" key={id}>
                         <span className="testimonie__value">{value}</span>
                         <p className="testimonie__label">{label}</p>
                     </div>
                 ))}
             </div>
+
         </div>
     )
 }

@@ -54,6 +54,7 @@ export default function AboutSection() {
               <h2 className="about__title">Sobre Evolfusion</h2>
               <p className="about__description">Transformamos el mundo digital con soluciones tecnológicas de vanguardia</p>
             </div>
+            <div className="about__body">
             {/* map , recorre |   restructuración */}
             <div className=" about__cards">
               {aboutData.map(({ id, title, description, highlight }) => (
@@ -102,6 +103,7 @@ export default function AboutSection() {
               <img src="/img/profile.png" alt="Perfil de Sainas Erik" title="Salinas Erik" className="about__img" />
               <h3 className="about__name">Salinas Erik</h3>
               <p className="about__role">Fundador</p>
+            </div>
             </div>
             <div className="about__warranty">
               {aboutWarranty.map(({ id, icon, title, description }) => {
