@@ -7,9 +7,9 @@ export default function WavesBackground() {
         fill="url(#aboutGradient)"
         paused={false}
         options={{
-          height: 200,
-          amplitude: 90,
-          speed: 0.12,
+          height: 100,
+          amplitude: 250,
+          speed: 0.08,
           points: 3,
         }}
         className="wave"

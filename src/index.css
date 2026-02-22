@@ -1131,7 +1131,7 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 .form__support {
     text-align: center;
     font-family: var(--description-typography);
-    color: rgb(151, 148, 148);
+    color: #979494;
     font-size: 0.9rem;
     margin-top: 1rem;
     display: flex;
@@ -1139,6 +1139,151 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     align-items: center;
     gap: 6px;
 }
+
+/* *FOOTER */
+
+.footer {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-about-background);
+    padding: var(--main-padding);
+    padding-top: 1rem;
+}
+
+
+.footer__container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+
+.footer__brand {
+    max-width: 350px;
+}
+
+.footer__logo {
+    width: 70px;
+    margin-bottom: 1rem;
+}
+
+.footer__text {
+    color: #cfcfe6;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-family: var(--description-typography);
+}
+
+.footer__social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.2rem;
+}
+
+.footer__social svg {
+    width: 40px;
+    height: 40px;
+    padding: 0.6rem;
+    color: white;
+    background: var(--color-about-background);
+    border: 1px solid #979494;
+    border-radius: 12px;
+    cursor: pointer;
+    transition:
+        transform 0.5s cubic-bezier(.4, 0, .2, 1),
+        box-shadow 0.4s ease,
+        filter 0.4s ease;
+}
+
+/* ✨ HOVER */
+.footer__social svg:hover {
+    transform: rotate(12deg) scale(1.15);
+    box-shadow:
+        0 0 12px rgba(237, 30, 121, 0.9),
+        0 0 25px rgba(110, 57, 233, 0.9);
+
+    filter:
+        drop-shadow(0 0 6px #ed1e79) drop-shadow(0 0 14px #6e39e9);
+    background-color: #ed1e79;
+    border: 1px solid transparent;
+}
+
+
+
+.footer__block {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.footer__column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer__title {
+    font-weight: 600;
+    position: relative;
+    width: fit-content;
+    color: #ffffff;
+    font-family: var(--subtitle-typography);
+    font-size: 1.2rem;
+}
+
+.footer__title::after {
+    content: "";
+    width: 40%;
+    height: 3px;
+    background: linear-gradient(90deg, #ff2ec4, #8f00ff);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    border-radius: 3px;
+}
+
+.footer__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer__item {
+    color: #cfcfe6;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-family: var(--title-typography);
+}
+
+.footer__item:hover {
+    color: #6e39e9;
+}
+
+
+.footer__contact {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #cfcfe6;
+    font-size: 0.9rem;
+    font-family: var(--title-typography);
+}
+
+.footer__bottom {
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #aaa;
+    font-family: var(--description-typography);
+}
+
 
 /*!Tablet */
 @media (min-width: 768px) {
@@ -1205,6 +1350,22 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 
     .form__support {
         font-size: 1rem;
+    }
+
+    .footer__container {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: row;
+        gap: 0rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer__block {
+        display: flex;
+        justify-content: space-between;
+        gap: 6rem;
     }
 
 }
@@ -1278,6 +1439,7 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     }
 
     .home__content,
+    .contact__container,
     .contact__container {
         width: 50%;
     }
@@ -1314,10 +1476,11 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
         margin-top: 0;
         display: flex;
         align-items: stretch;
+        height: 100%;
     }
 
-    .about__profile {
-        height: 100%;
+    .about__img {
+        width: 70%;
     }
 
     .about__achievements {
@@ -1328,12 +1491,14 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 
     .about__achievement-card {
         width: 100%;
-        background-color: red;
     }
 
     .about__content,
     .service,
-    .testimonies {
+    .testimonies,
+    .contact__info,
+    .form__container,
+    .footer {
         padding: var(--netbook-margin);
     }
 
@@ -1371,8 +1536,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 
     /* Posiciones */
     .testimonies__card--0 {
-        top: 0;
-        left: 5%;
+        top: 100px;
+        left: 15%;
         transform: rotate(-4deg);
     }
 
@@ -1389,14 +1554,110 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     }
 
     .testimonies__card--3 {
+        bottom: 300px;
+        right: 25%;
+        transform: rotate(2deg);
+    }
+
+    .testimonies__card--4 {
         bottom: 80px;
         right: 15%;
         transform: rotate(2deg);
     }
 
+    .testimonie__stats {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .contact__features {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0rem;
+    }
+
+    .contact__items {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .contact__item:nth-child(3) {
+        grid-column: auto;
+        /* ocupa las 2 columnas */
+    }
+
+    .contact__item-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .contact__item-figure {
+        width: 44px;
+        height: 44px;
+    }
+
+
+    .form {
+        width: 60%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    /* Estos ocupan todo el ancho */
+    .form__group:nth-child(1),
+    .form__group:nth-child(4),
+    .form__group:nth-child(5),
+    .form__group:nth-child(6) {
+        grid-column: 1 / -1;
+    }
+
+    .form__label {
+        font-size: 1rem;
+    }
+
+    .form__input {
+        font-size: 1rem;
+    }
+
+    .form__select {
+        font-size: 1rem;
+    }
+
+    .form__textarea {
+        font-size: 1rem;
+    }
+
+    .form__button {
+        font-size: var(--btn-size);
+    }
+
+    .form__icon-sparkle {
+        width: 1.2rem;
+    }
+
+    .form__icon-send {
+        width: 1.2rem;
+    }
+
+    .form__button:hover .form__icon-send {
+        transform: translateX(20%) translateY(-20%);
+    }
+
+    .form__support {
+        font-size: 0.9rem;
+    }
+    .footer {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-about-background);
+    padding: var(--main-padding);
+    padding-top: 1rem;
+    
+}
 
 }
 
 @media (min-width: 1440px) {
-    /* Desktop */
+    .footer__block {
+        gap: 10rem;
+    }
 }
