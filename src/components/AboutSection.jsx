@@ -4,13 +4,8 @@ import { aboutData, aboutWarranty, aboutAchievements } from "../data/data.js";
 import { HomeParticle } from "../hook/HomeParticle.js"; /* imprtamos el hook (logica) */
 import { CodeXml, Palette, TrendingUp, ShieldCheck, Rocket, Award } from "lucide-react";
 
-/* Este objeto relaciona un STRING (que viene desde la base de datos)
- con el componente real de Lucide React.
-Nos permite renderizar iconos dinámicamente a partir de la dat */
-/* Es un objeto */
 const iconMap = { CodeXml, Palette, TrendingUp, ShieldCheck, Rocket, Award };
 
-/* Función que permite resaltar contenido  */
 function highlightText(text, word) {
   if (!word || !text.includes(word)) return text;
 
@@ -29,19 +24,13 @@ function highlightText(text, word) {
 
 export default function AboutSection() {
 
-  //*Destructuring de objetos
-  //Esto permite acceder a las propiedades de un objeto que retorna el hook HomeParticle
   const { particles, isHover, setIsHover } = HomeParticle();
 
   return (
     <div id="nosotros" >
-      {/* FONDO */}
       <WavesBackground />
 
-      {/* CONTENIDO */}
       <div className="about__content">
-
-        {/* motion.div es un super div que permite animar el contenido */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -49,14 +38,12 @@ export default function AboutSection() {
           transition={{ duration: 0.6 }}
         >
         </motion.div>
-        
           <div className="about__evolfusion" id="about">
             <div className="about__header">
               <h2 className="about__title">Sobre Evolfusion</h2>
               <p className="about__description">Transformamos el mundo digital con soluciones tecnológicas de vanguardia</p>
             </div>
             <div className="about__body">
-            {/* map , recorre |   restructuración */}
             <div className=" about__cards">
               {aboutData.map(({ id, title, description, highlight }) => (
                 <article className="about__card" key={`about-card-${id}`} data-aos="fade-right">
@@ -66,7 +53,6 @@ export default function AboutSection() {
               ))}
             </div>
             <div className="about__profile"  data-aos="zoom-in">
-              {/* PARTÍCULAS SOLO EN EL PROFILE */}
               <div
                 className="profile__particles"
                 onMouseEnter={() => setIsHover(true)}
@@ -126,11 +112,8 @@ export default function AboutSection() {
               })}
             </div>
             <div className="about__achievements">
-                                        {/* STRING */}
               {aboutAchievements.map(({ id, icon, title, description }) => {
-                /* Accede a una propiedad del objeto */
                 const Icon = iconMap[icon];
-
                 return (
                   <article className="about__achievement-card" key={`about-achievement-${id}`} data-aos="zoom-in">
                     <div className="about__achievement">

@@ -4,7 +4,7 @@ import { testimoniesData, testimoniesStats } from "../data/data.js"
 import { Quote, Star } from "lucide-react"
 
 const iconMap = { Quote, Star }
-const AUTOPLAY_TIME = 9000 // 4 segundos
+const AUTOPLAY_TIME = 9000 
 
 export default function TestimoniesSection() {
     const [index, setIndex] = useState(0)
@@ -66,9 +66,6 @@ export default function TestimoniesSection() {
                     </motion.article>
                 </AnimatePresence>
             </div>
-           
-
-            {/* ===== Desktop Floating Cards ===== */}
             <div className="testimonies__desktop">
                 {testimoniesData.map(({ icon, iconStar, description, name, position }, i) => {
                     const Icon = iconMap[icon]

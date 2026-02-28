@@ -1,7 +1,7 @@
-import { Sparkles, ArrowRight, Mail, Phone, MapPin, Send } from "lucide-react"; /* Importamos libreria  icons*/
+import { Sparkles, ArrowRight, Mail, Phone, MapPin, Send } from "lucide-react";
 const iconMap = { Mail, Phone, MapPin };
-import { motion } from "framer-motion"; /* Importamos libreria  animación*/
-import { HomeParticle } from "../hook/HomeParticle.js"; /* imprtamos el hook (logica) */
+import { motion } from "framer-motion"; 
+import { HomeParticle } from "../hook/HomeParticle.js";
 import { contactData } from "../data/data"
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
@@ -9,10 +9,7 @@ import { createPortal } from "react-dom";
 /* PASAR A CARPETA DE HOOKS */
 export default function ContactSection() {
 
-    //*Destructuring de objetos
-    //Esto permite acceder a las propiedades de un objeto que retorna el hook HomeParticle
     const { particles, isHover, setIsHover } = HomeParticle();
-
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
 
@@ -103,8 +100,6 @@ export default function ContactSection() {
                         />
                     ))}
                 </div>
-
-                {/* CONTENIDO */}
                 <div className="contact__content" id="contact">
                     <h2 className="contact__title" data-aos="fade-right">¿Listo para llevar tu <span className="contact__title-span">negocio </span> al siguiente nivel?</h2>
                     <div className="contact__container" data-aos="fade-up">

@@ -1,4 +1,3 @@
-// base de datos 
 export const aboutData = [
     {
         id: 1, title: "Quiénes Somos", highlight: "evolución digital", description: "Somos un equipo enfocado en la evolución digital, acompañando a marcas y proyectos en su crecimiento online mediante experiencias sólidas y alineadas a sus objetivos."

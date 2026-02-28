@@ -1,4 +1,3 @@
-//*barrel file pattern para importar componentes
 import {
   Header,
   HomeSection,
@@ -8,11 +7,11 @@ import {
   ContactSection,
   Footer
 } from './components'
-import useAOS from "../src/hook/UseaAos"; /* Importamos el hook para animaciones AOS */
+import useAOS from "../src/hook/UseaAos";
 
 
 function App() {
-   useAOS(); /* Llamamos al hook para inicializar AOS en toda la aplicación */
+   useAOS(); 
 
   return (
     <>

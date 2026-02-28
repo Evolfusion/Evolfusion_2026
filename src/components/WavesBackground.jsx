@@ -1,5 +1,5 @@
 import Wave from "react-wavify";
-/* Componente de fondo con ondas , configuración */
+
 export default function WavesBackground() {
   return (
     <div className="waves-bg">

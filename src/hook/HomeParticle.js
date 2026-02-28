@@ -1,5 +1,4 @@
 import { useMemo, useState } from "react";
-/* Codigo de  la libreria de motion */
 
 export function HomeParticle() {
 
@@ -19,7 +18,6 @@ export function HomeParticle() {
             })),
         []
     );
-    /* Retornamos las variables de promps que creamos y las funciones */
     return{
         particles,
         isHover,

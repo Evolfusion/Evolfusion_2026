@@ -1,13 +1,11 @@
-import { Sparkles, ArrowRight } from "lucide-react"; /* Importamos libreria  icons*/
-import { motion } from "framer-motion"; /* Importamos libreria  animación*/
-import { HomeParticle } from "../hook/HomeParticle.js"; /* imprtamos el hook (logica) */
+import { Sparkles, ArrowRight } from "lucide-react"; 
+import { motion } from "framer-motion"; 
+import { HomeParticle } from "../hook/HomeParticle.js"; 
 
 
 /* PASAR A CARPETA DE HOOKS */
 export default function HomeSection() {
 
-  //*Destructuring de objetos
-  //Esto permite acceder a las propiedades de un objeto que retorna el hook HomeParticle
   const { particles, isHover, setIsHover } = HomeParticle();
 
   return (
@@ -15,7 +13,6 @@ export default function HomeSection() {
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
-      {/* PARTÍCULAS */}
       <div className="home__particles">
         {particles.map((p, i) => (
           <motion.span
@@ -46,8 +43,6 @@ export default function HomeSection() {
           />
         ))}
       </div>
-
-      {/* CONTENIDO */}
       <div className="home__content" id="home">
         <h1 className="home__title" data-aos="fade-right">Transformamos Ideas en Realidad Digital</h1>
         <div className="home__container"  data-aos="fade-up">

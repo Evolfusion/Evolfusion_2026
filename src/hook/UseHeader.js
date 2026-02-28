@@ -9,7 +9,6 @@ export default function useHeader() {
         setIsOpen(!isOpen);
     };
 
-    // 👉 Detectar scroll
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 50);
@@ -19,7 +18,6 @@ export default function useHeader() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // 👉 Cerrar menú al hacer click fuera
     useEffect(() => {
         const handleClickOutside = (e) => {
             if (menuRef.current && !menuRef.current.contains(e.target)) {

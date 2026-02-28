@@ -1,8 +1,3 @@
-/* Estilos principales de la aplicación  */
-/* /* Alcance global: Generalmente, se utiliza para estilos globales que afectan a toda la aplicación.
-Variables CSS: Puedes definir variables CSS aquí para reutilizarlas en otros archivos.
-Normalización: Se incluyen estilos de normalización como Normalize.css o Reset CSS para garantizar una apariencia consistente en diferentes navegadores.
-Estilos base: Aquí puedes establecer los estilos básicos para elementos como el cuerpo, encabezados, párrafos, etc. */
 * {
     margin: 0;
     padding: 0;
