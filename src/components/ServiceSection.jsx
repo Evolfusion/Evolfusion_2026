@@ -15,7 +15,7 @@ export default function ServiceSection() {
                         const Icon = iconMap[icon];
 
                         return (
-                            <article className="services__card" key={id}>
+                            <article className="services__card" key={id} data-aos="zoom-in">
                                 <div className="services__icons">
                                     <div className="service__icons-primary">
                                         <Icon size={48} strokeWidth={1.8} className="services__icon-primary" />
@@ -26,14 +26,14 @@ export default function ServiceSection() {
                                 </div>
                                 <h3 className="services__title-card">{title}</h3>
                                 <p className="services__description-card">{description}</p>
-                                <a href={linkUrl} className="services__btn">Más información <ArrowRight className="services__icon" /></a>
+                                <a href={linkUrl} className="services__btn" target="_blank">Más información <ArrowRight className="services__icon" /></a>
                             </article>
                         )
                     })}
                 </div>
                 <div className="services__request">
                     <p className="services__description-request">¿No encuentras lo que buscas? Consulta por servicios personalizados</p>
-                    <a href="" className="services__btn-request">Solicitar Consulta Gratuita</a>
+                    <a href="https://api.whatsapp.com/send?phone=541127728592&text=¡Hola! Me interesa obtener información sobre servicios personalizados" className="services__btn-request" target="_blank">Solicitar Consulta Gratuita</a>
                 </div>
             </div>
         </div>

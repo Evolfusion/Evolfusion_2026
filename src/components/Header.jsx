@@ -16,7 +16,7 @@ export default function Header(){
                     <li><a href="#services" className="header__menu-link" onClick={toggleMenu}>Servicios</a></li>
                     <li><a href="#contact" className="header__menu-link" onClick={toggleMenu}>Contacto</a></li>
                     <li>
-                        <a href="#budget" className="header__menu-link header__menu-link--budget" onClick={toggleMenu}>
+                        <a href="https://api.whatsapp.com/send?phone=541127728592&amp;text=¡Hola! Me interesa optener un presupuesto gratis" className="header__menu-link header__menu-link--budget" onClick={toggleMenu} target='_blank' aria-label='Presupuesto Gratis' >
                             Presupuesto Gratis <Sparkles />
                         </a>
                     </li>

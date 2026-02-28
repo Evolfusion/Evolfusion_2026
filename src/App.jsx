@@ -8,8 +8,12 @@ import {
   ContactSection,
   Footer
 } from './components'
+import useAOS from "../src/hook/UseaAos"; /* Importamos el hook para animaciones AOS */
+
 
 function App() {
+   useAOS(); /* Llamamos al hook para inicializar AOS en toda la aplicación */
+
   return (
     <>
     <main>

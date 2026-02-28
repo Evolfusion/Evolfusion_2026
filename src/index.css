@@ -967,11 +967,15 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     transform: scale(1.08);
 }
 
+
+.contact__item-icon {
+    width: 28px;
+    height: 28px;
+}
+
 .contact__item-figure {
-    width: 64px;
-    height: 64px;
-    display: grid;
-    place-items: center;
+    width: 44px;
+    height: 44px;
 }
 
 .contact__item-info {
@@ -981,7 +985,18 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     line-height: 1.4;
 }
 
-.form__container {
+.contact__form-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.contact__map iframe {
+    width: 100%;
+    height: 20dvh;
+    margin: var(--container-margin);
+}
+
+.contact__form {
     margin: var(--main-margin);
     margin-top: 2rem;
     margin-bottom: 0;
@@ -999,6 +1014,7 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     padding: 1.5rem;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.25);
+    width: 100%;
 }
 
 .form::before {
@@ -1040,6 +1056,7 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 .form__input::placeholder {
     font-family: var(--description-typography);
     color: rgb(151, 148, 148);
+    font-size: 1rem;
 }
 
 .form__select {
@@ -1128,12 +1145,102 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
 
 }
 
+
+@keyframes loading {
+    0% {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+
+    50% {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    100% {
+        transform: scaleX(0);
+        transform-origin: right;
+    }
+}
+
+/*! reparar modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999999;
+    /* más alto que cualquier header */
+}
+
+.modal__content {
+    background: #6e39e9;
+    padding: 1.5rem;
+    width: 90%;
+    max-width: 420px;
+    border-radius: 16px;
+    text-align: center;
+    animation: modalFade 0.3s ease;
+}
+
+.modal__title {
+    color: white;
+    font-family: var(--title-typography);
+    font-size: 1.5rem;
+}
+
+.modal__description {
+    color: #cfcfe6;
+    font-family: var(--description-typography);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.modal__content button {
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    background: #ED1E79;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: var(--description-typography);
+}
+
+.modal__content button:hover {
+    background: #ff007f;
+    text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px white;
+    transition: all 0.3s ease;
+    transform: scale(1.1);
+}
+
+@keyframes modalFade {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 .form__support {
     text-align: center;
     font-family: var(--description-typography);
     color: #979494;
     font-size: 0.9rem;
-    margin-top: 1rem;
+    margin: 1rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1250,7 +1357,7 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     margin: 0;
 }
 
-.footer__item {
+.footer__item>a {
     color: #cfcfe6;
     font-size: 0.9rem;
     cursor: pointer;
@@ -1258,7 +1365,7 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     font-family: var(--title-typography);
 }
 
-.footer__item:hover {
+.footer__item>a:hover {
     color: #6e39e9;
 }
 
@@ -1368,6 +1475,31 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
         gap: 6rem;
     }
 
+    .modal__content {
+        background: #6e39e9;
+        padding: 1.5rem;
+        width: 100%;
+        max-width: 420px;
+        border-radius: 16px;
+        text-align: center;
+        animation: modalFade 0.3s ease;
+    }
+
+    .modal__title {
+        font-size: 2rem;
+    }
+
+    .modal__description {
+        font-size: 1.2rem;
+    }
+
+    .modal__content button {
+        font-size: 1.2rem;
+    }
+
+    .contact__map iframe {
+        height: 25dvh;
+    }
 }
 
 /*! Laptop */
@@ -1497,7 +1629,8 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     .service,
     .testimonies,
     .contact__info,
-    .form__container,
+    .contact__form,
+    .contact__form-wrapper,
     .footer {
         padding: var(--netbook-margin);
     }
@@ -1588,18 +1721,36 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
         height: 28px;
     }
 
-    .contact__item-figure {
-        width: 44px;
-        height: 44px;
-    }
-
-
     .form {
-        width: 60%;
         margin: 0 auto;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
+    }
+
+    .contact__map iframe {
+        width: 100%;
+        height: 50dvh;
+    }
+
+    .contact__form {
+        margin: var(--main-margin);
+        padding: 0;
+        width: 50%;
+    }
+
+    .contact__form-wrapper {
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+
+    .contact__map {
+        width: 50%;
+    }
+
+    .form {
+        width: 100%;
     }
 
     /* Estos ocupan todo el ancho */
@@ -1610,24 +1761,23 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
         grid-column: 1 / -1;
     }
 
-    .form__label {
-        font-size: 1rem;
-    }
-
-    .form__input {
-        font-size: 1rem;
-    }
-
-    .form__select {
-        font-size: 1rem;
-    }
-
+    .form__label,
+    .form__input,
+    .form__select,
     .form__textarea {
         font-size: 1rem;
     }
 
+    .form__input,
+    .form__select,
+    .form__textarea {
+        padding: 0.5rem;
+        margin-bottom: 0rem;
+    }
+
     .form__button {
         font-size: var(--btn-size);
+        padding: 0.75rem 1.5rem;
     }
 
     .form__icon-sparkle {
@@ -1645,15 +1795,14 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
     .form__support {
         font-size: 0.9rem;
     }
-    .footer {
-    position: relative;
-    overflow: hidden;
-    background: var(--color-about-background);
-    padding: var(--main-padding);
-    padding-top: 1rem;
-    
-}
 
+    .footer {
+        position: relative;
+        overflow: hidden;
+        background: var(--color-about-background);
+        padding: var(--main-padding);
+        padding-top: 1rem;
+    }
 }
 
 @media (min-width: 1440px) {

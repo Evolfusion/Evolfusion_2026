@@ -2,6 +2,7 @@ import { Sparkles, ArrowRight } from "lucide-react"; /* Importamos libreria  ico
 import { motion } from "framer-motion"; /* Importamos libreria  animación*/
 import { HomeParticle } from "../hook/HomeParticle.js"; /* imprtamos el hook (logica) */
 
+
 /* PASAR A CARPETA DE HOOKS */
 export default function HomeSection() {
 
@@ -47,16 +48,16 @@ export default function HomeSection() {
       </div>
 
       {/* CONTENIDO */}
-      <div className="home__content">
-        <h1 className="home__title">Transformamos Ideas en Realidad Digital</h1>
-        <div className="home__container">
+      <div className="home__content" id="home">
+        <h1 className="home__title" data-aos="fade-right">Transformamos Ideas en Realidad Digital</h1>
+        <div className="home__container"  data-aos="fade-up">
           <div className="home__text">
             <p className="home__description">Desarrollo web profesional, diseño gráfico único y marketing digital estratégico.</p>
             <p className="home__span">Código personalizado, sin plantillas. Calidad garantizada.</p>
           </div>
           <div className="home__buttons">
-            <a className="home__budget">Solicitar Presupuesto <ArrowRight className="home__icon"/></a>
-            <a className="home__services">Ver Servicios <Sparkles className="home__icon home__icon--rotate"/></a>
+            <a href="https://api.whatsapp.com/send?phone=541127728592&amp;text=¡Hola! Me interesa optener un presupuesto gratis" className="home__budget" target='_blank' aria-label='Presupuesto Gratis'>Solicitar Presupuesto <ArrowRight className="home__icon" /></a>
+            <a href="#services" className="home__services">Ver Servicios <Sparkles className="home__icon home__icon--rotate" /></a>
           </div>
         </div>
       </div>

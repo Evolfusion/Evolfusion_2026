@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { aboutData, aboutWarranty, aboutAchievements } from "../data/data.js";
 import { HomeParticle } from "../hook/HomeParticle.js"; /* imprtamos el hook (logica) */
 import { CodeXml, Palette, TrendingUp, ShieldCheck, Rocket, Award } from "lucide-react";
+
 /* Este objeto relaciona un STRING (que viene desde la base de datos)
  con el componente real de Lucide React.
 Nos permite renderizar iconos dinámicamente a partir de la dat */
@@ -49,7 +50,7 @@ export default function AboutSection() {
         >
         </motion.div>
         
-          <div className="about__evolfusion">
+          <div className="about__evolfusion" id="about">
             <div className="about__header">
               <h2 className="about__title">Sobre Evolfusion</h2>
               <p className="about__description">Transformamos el mundo digital con soluciones tecnológicas de vanguardia</p>
@@ -58,13 +59,13 @@ export default function AboutSection() {
             {/* map , recorre |   restructuración */}
             <div className=" about__cards">
               {aboutData.map(({ id, title, description, highlight }) => (
-                <article className="about__card" key={`about-card-${id}`}>
+                <article className="about__card" key={`about-card-${id}`} data-aos="fade-right">
                   <h3 className="about__title-card">{title}</h3>
                   <p className="about__description-card">{highlightText(description, highlight)}</p>
                 </article>
               ))}
             </div>
-            <div className="about__profile">
+            <div className="about__profile"  data-aos="zoom-in">
               {/* PARTÍCULAS SOLO EN EL PROFILE */}
               <div
                 className="profile__particles"
@@ -110,7 +111,7 @@ export default function AboutSection() {
                 const Icon = iconMap[icon];
 
                 return (
-                  <article className="about__features" key={`about-warranty-${id}`}>
+                  <article className="about__features" key={`about-warranty-${id}`} data-aos="fade-left">
                     <div className="about__feature">
                       <figure className="about__icons">
                         <Icon size={48} strokeWidth={1.8} className="about__icon" />
@@ -131,7 +132,7 @@ export default function AboutSection() {
                 const Icon = iconMap[icon];
 
                 return (
-                  <article className="about__achievement-card" key={`about-achievement-${id}`}>
+                  <article className="about__achievement-card" key={`about-achievement-${id}`} data-aos="zoom-in">
                     <div className="about__achievement">
                       <figure className="about__achievement-icon">
                         <Icon size={48} strokeWidth={1.8} className="about__achievement-icon-svg"
